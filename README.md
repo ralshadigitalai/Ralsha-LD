@@ -1,6 +1,6 @@
 # Ralsha Leads Dashboard
 
-An internal read-only lead touchpoint viewer built with Next.js 14.2.11 App Router.
+An internal read-only lead touchpoint viewer built with Next.js 16 App Router.
 
 ---
 
@@ -63,7 +63,7 @@ npm install
 cp .env.example .env.local
 # Edit .env.local with your real RALSHA_BACKEND_API_URL
 npm run dev
-# Open http://localhost:3001 (or the port shown in terminal)
+# Open http://localhost:3000 (or the port shown in terminal)
 ```
 
 ---
