@@ -36,4 +36,5 @@ Thumbs.db
 # Exports / scratch files
 exports/
 *.csv
-.tsbuildinfo
+*.tsbuildinfo
+tsconfig.tsbuildinfo

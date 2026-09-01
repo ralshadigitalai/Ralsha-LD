@@ -33,16 +33,11 @@ export default function DashboardPage() {
   // Race-condition protection
   const fetchSeqRef = useRef(0);
   const abortRef = useRef<AbortController | null>(null);
-  const prevParamsRef = useRef<string>('');
 
   // Refresh trigger counter — incrementing this triggers the effect
   const [refreshCount, setRefreshCount] = useState(0);
 
   useEffect(() => {
-    const key = JSON.stringify({ range, startDate, endDate, page, limit, refreshCount });
-    if (key === prevParamsRef.current) return;
-    prevParamsRef.current = key;
-
     // Abort previous in-flight request
     abortRef.current?.abort();
     const controller = new AbortController();
@@ -51,6 +46,7 @@ export default function DashboardPage() {
     fetchSeqRef.current += 1;
     const mySeq = fetchSeqRef.current;
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoadState('loading');
     setErrorMessage(null);
 

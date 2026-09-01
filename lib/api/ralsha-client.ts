@@ -1,7 +1,7 @@
 import { BackendSuccessResponseSchema, mapToSafeDTO, type SafeLeadsResponse } from '@/lib/schemas/backend.schema';
 import type { DashboardQuery } from '@/lib/schemas/query.schema';
 
-const TIMEOUT_MS = 8000;
+const TIMEOUT_MS = 30_000; // 30 s — accommodates Vercel cold starts on the upstream backend
 
 function getBaseUrl(): string {
   const raw = process.env.RALSHA_BACKEND_API_URL;
